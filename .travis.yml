@@ -14,6 +14,7 @@ jobs:
         - set -o pipefail
         - xcodebuild -project PiDash-iOS/PiDash.xcodeproj -scheme PiDash -destination platform\=iOS\ Simulator,OS\=13.0,name\=iPhone\ Xs build test | xcpretty
     - stage: deploy
+      if: branch = master
       script: tar -cvzf server.tar.gz PiDash-Server
       deploy:
         provider: releases
