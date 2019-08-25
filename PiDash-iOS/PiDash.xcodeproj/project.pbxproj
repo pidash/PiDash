@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		400E344223128CDB00B57407 /* PiDashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E344123128CDB00B57407 /* PiDashTests.swift */; };
 		40B1E58D2312820300A29211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E58C2312820300A29211 /* AppDelegate.swift */; };
 		40B1E58F2312820300A29211 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E58E2312820300A29211 /* SceneDelegate.swift */; };
 		40B1E5922312820300A29211 /* PiDash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E5902312820300A29211 /* PiDash.xcdatamodeld */; };
@@ -16,7 +17,20 @@
 		40B1E59C2312820500A29211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B1E59A2312820500A29211 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		400E344423128CDB00B57407 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40B1E5812312820300A29211 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40B1E5882312820300A29211;
+			remoteInfo = PiDash;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		400E343F23128CDB00B57407 /* PiDashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiDashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		400E344123128CDB00B57407 /* PiDashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiDashTests.swift; sourceTree = "<group>"; };
+		400E344323128CDB00B57407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40B1E5892312820300A29211 /* PiDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B1E58C2312820300A29211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40B1E58E2312820300A29211 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +43,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		400E343C23128CDB00B57407 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40B1E5862312820300A29211 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +60,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		400E344023128CDB00B57407 /* PiDashTests */ = {
+			isa = PBXGroup;
+			children = (
+				400E344123128CDB00B57407 /* PiDashTests.swift */,
+				400E344323128CDB00B57407 /* Info.plist */,
+			);
+			path = PiDashTests;
+			sourceTree = "<group>";
+		};
 		40B1E5802312820300A29211 = {
 			isa = PBXGroup;
 			children = (
 				40B1E58B2312820300A29211 /* PiDash */,
+				400E344023128CDB00B57407 /* PiDashTests */,
 				40B1E58A2312820300A29211 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				40B1E5892312820300A29211 /* PiDash.app */,
+				400E343F23128CDB00B57407 /* PiDashTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +113,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		400E343E23128CDB00B57407 /* PiDashTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 400E344823128CDB00B57407 /* Build configuration list for PBXNativeTarget "PiDashTests" */;
+			buildPhases = (
+				400E343B23128CDB00B57407 /* Sources */,
+				400E343C23128CDB00B57407 /* Frameworks */,
+				400E343D23128CDB00B57407 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				400E344523128CDB00B57407 /* PBXTargetDependency */,
+			);
+			name = PiDashTests;
+			productName = PiDashTests;
+			productReference = 400E343F23128CDB00B57407 /* PiDashTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		40B1E5882312820300A29211 /* PiDash */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40B1E5A02312820500A29211 /* Build configuration list for PBXNativeTarget "PiDash" */;
@@ -108,6 +158,10 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Noah Peeters";
 				TargetAttributes = {
+					400E343E23128CDB00B57407 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 40B1E5882312820300A29211;
+					};
 					40B1E5882312820300A29211 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -127,11 +181,19 @@
 			projectRoot = "";
 			targets = (
 				40B1E5882312820300A29211 /* PiDash */,
+				400E343E23128CDB00B57407 /* PiDashTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		400E343D23128CDB00B57407 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40B1E5872312820300A29211 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +207,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		400E343B23128CDB00B57407 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				400E344223128CDB00B57407 /* PiDashTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40B1E5852312820300A29211 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +228,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		400E344523128CDB00B57407 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40B1E5882312820300A29211 /* PiDash */;
+			targetProxy = 400E344423128CDB00B57407 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		40B1E59A2312820500A29211 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -170,6 +248,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		400E344623128CDB00B57407 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52A793VRAY;
+				INFOPLIST_FILE = PiDashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.PiDashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PiDash.app/PiDash";
+			};
+			name = Debug;
+		};
+		400E344723128CDB00B57407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52A793VRAY;
+				INFOPLIST_FILE = PiDashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.PiDashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PiDash.app/PiDash";
+			};
+			name = Release;
+		};
 		40B1E59E2312820500A29211 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -327,6 +445,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		400E344823128CDB00B57407 /* Build configuration list for PBXNativeTarget "PiDashTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				400E344623128CDB00B57407 /* Debug */,
+				400E344723128CDB00B57407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		40B1E5842312820300A29211 /* Build configuration list for PBXProject "PiDash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
