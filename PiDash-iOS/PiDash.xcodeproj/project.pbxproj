@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		400E344223128CDB00B57407 /* PiDashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E344123128CDB00B57407 /* PiDashTests.swift */; };
+		400E34502312E8E400B57407 /* BlueCom in Frameworks */ = {isa = PBXBuildFile; productRef = 400E344F2312E8E400B57407 /* BlueCom */; };
 		40B1E58D2312820300A29211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E58C2312820300A29211 /* AppDelegate.swift */; };
 		40B1E58F2312820300A29211 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E58E2312820300A29211 /* SceneDelegate.swift */; };
 		40B1E5922312820300A29211 /* PiDash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E5902312820300A29211 /* PiDash.xcdatamodeld */; };
@@ -31,6 +32,8 @@
 		400E343F23128CDB00B57407 /* PiDashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiDashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		400E344123128CDB00B57407 /* PiDashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiDashTests.swift; sourceTree = "<group>"; };
 		400E344323128CDB00B57407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		400E344B2312E77100B57407 /* BlueCom */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCom; sourceTree = "<group>"; };
+		400E34512312FF9600B57407 /* Serializable */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Serializable; sourceTree = "<group>"; };
 		40B1E5892312820300A29211 /* PiDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B1E58C2312820300A29211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40B1E58E2312820300A29211 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400E34502312E8E400B57407 /* BlueCom in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,12 +73,42 @@
 			path = PiDashTests;
 			sourceTree = "<group>";
 		};
+		400E34492312E67D00B57407 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40B1E5952312820500A29211 /* Assets.xcassets */,
+				40B1E59A2312820500A29211 /* LaunchScreen.storyboard */,
+				40B1E59D2312820500A29211 /* Info.plist */,
+				40B1E5902312820300A29211 /* PiDash.xcdatamodeld */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		400E344A2312E68B00B57407 /* Application Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				40B1E58C2312820300A29211 /* AppDelegate.swift */,
+				40B1E58E2312820300A29211 /* SceneDelegate.swift */,
+			);
+			path = "Application Delegates";
+			sourceTree = "<group>";
+		};
+		400E344E2312E8E400B57407 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		40B1E5802312820300A29211 = {
 			isa = PBXGroup;
 			children = (
 				40B1E58B2312820300A29211 /* PiDash */,
 				400E344023128CDB00B57407 /* PiDashTests */,
+				400E344B2312E77100B57407 /* BlueCom */,
+				400E34512312FF9600B57407 /* Serializable */,
 				40B1E58A2312820300A29211 /* Products */,
+				400E344E2312E8E400B57407 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,13 +124,9 @@
 		40B1E58B2312820300A29211 /* PiDash */ = {
 			isa = PBXGroup;
 			children = (
-				40B1E58C2312820300A29211 /* AppDelegate.swift */,
-				40B1E58E2312820300A29211 /* SceneDelegate.swift */,
+				400E344A2312E68B00B57407 /* Application Delegates */,
 				40B1E5932312820300A29211 /* ContentView.swift */,
-				40B1E5952312820500A29211 /* Assets.xcassets */,
-				40B1E59A2312820500A29211 /* LaunchScreen.storyboard */,
-				40B1E59D2312820500A29211 /* Info.plist */,
-				40B1E5902312820300A29211 /* PiDash.xcdatamodeld */,
+				400E34492312E67D00B57407 /* Supporting Files */,
 				40B1E5972312820500A29211 /* Preview Content */,
 			);
 			path = PiDash;
@@ -144,6 +174,9 @@
 			dependencies = (
 			);
 			name = PiDash;
+			packageProductDependencies = (
+				400E344F2312E8E400B57407 /* BlueCom */,
+			);
 			productName = PiDash;
 			productReference = 40B1E5892312820300A29211 /* PiDash.app */;
 			productType = "com.apple.product-type.application";
@@ -410,7 +443,7 @@
 				DEVELOPMENT_ASSET_PATHS = "PiDash/Preview\\ Content";
 				DEVELOPMENT_TEAM = 52A793VRAY;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = PiDash/Info.plist;
+				INFOPLIST_FILE = "PiDash/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,7 +463,7 @@
 				DEVELOPMENT_ASSET_PATHS = "PiDash/Preview\\ Content";
 				DEVELOPMENT_TEAM = 52A793VRAY;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = PiDash/Info.plist;
+				INFOPLIST_FILE = "PiDash/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +506,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		400E344F2312E8E400B57407 /* BlueCom */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BlueCom;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		40B1E5902312820300A29211 /* PiDash.xcdatamodeld */ = {
