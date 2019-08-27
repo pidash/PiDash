@@ -9,11 +9,15 @@ import Foundation
 import Serializable
 
 internal struct CloseChannelServerbound: ServerboundMessage {
-    static var id: Byte = 3
-    
-    let channelID: ChannelID
-    
-    func serializeBody<Buffer>(to buffer: Buffer) where Buffer : ByteWriteBuffer {
+    internal static var id: Byte = 3
+
+    private let channelID: ChannelID
+
+    internal init(channelID: ChannelID) {
+        self.channelID = channelID
+    }
+
+    internal func serializeBody<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         channelID.serialize(to: buffer)
     }
 }

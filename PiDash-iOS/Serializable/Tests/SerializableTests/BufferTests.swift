@@ -6,13 +6,13 @@
 //
 
 import Foundation
-import Quick
 import Nimble
+import Quick
 @testable import Serializable
 
 public class ReadBufferTests: QuickSpec {
     // swiftlint:disable:next function_body_length
-    public override func spec() {
+    override public func spec() {
         describe("creating a buffer with data") {
             var buffer: ByteBuffer!
 
@@ -127,11 +127,13 @@ public class ReadBufferTests: QuickSpec {
 
             context("when loading the data as other type") {
                 it("updates the read position correctly when reading UInt8") {
+                    // swiftlint:disable:next force_try
                     let _: UInt8 = try! buffer.loadAsType()
                     expect(buffer.position).to(equal(1))
                 }
 
                 it("updates the read position correctly when reading UInt64") {
+                    // swiftlint:disable:next force_try
                     let _: UInt64 = try! buffer.loadAsType()
                     expect(buffer.position).to(equal(8))
                 }
@@ -163,7 +165,7 @@ public class ReadBufferTests: QuickSpec {
 }
 
 public class WriteBufferTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         describe("creating a buffer without data") {
             var buffer: ByteBuffer!
 

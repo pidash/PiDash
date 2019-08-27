@@ -35,6 +35,9 @@ public protocol WriteBuffer {
 }
 
 extension WriteBuffer {
+    /// Saves a copy of the raw bytes to the end of the buffer. If you have a var use `saveRaw`.
+    ///
+    /// - Parameter value: The value to append.
     public func saveRawCopy<Value>(_ value: Value) {
         var copy = value
         saveRaw(&copy)

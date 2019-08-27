@@ -9,11 +9,15 @@ import Foundation
 import Serializable
 
 internal struct OpenConnection: ServerboundMessage {
-    static var id: Byte = 0
-    
-    let sharedSecret: String
-    
-    func serializeBody<Buffer>(to buffer: Buffer) where Buffer : ByteWriteBuffer {
+    internal static var id: Byte = 0
+
+    private let sharedSecret: String
+
+    internal init(sharedSecret: String) {
+        self.sharedSecret = sharedSecret
+    }
+
+    internal func serializeBody<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         sharedSecret.serialize(to: buffer)
     }
 }

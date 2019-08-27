@@ -6,12 +6,12 @@
 //
 
 import Foundation
-import Quick
 import Nimble
+import Quick
 @testable import Serializable
 
 public class UUIDSerializationTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         describe("when creating a uuid") {
             let uuid = UUID()
 

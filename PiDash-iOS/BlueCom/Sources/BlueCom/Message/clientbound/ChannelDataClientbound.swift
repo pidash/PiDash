@@ -9,17 +9,17 @@ import Foundation
 import Serializable
 
 internal struct ChannelDataClientbound: ClientboundMessage {
-    static var id: Byte = 1
-    
-    let channleID: ChannelID
-    let data: Data
-    
-    internal init<Buffer>(from buffer: Buffer) throws where Buffer : ByteReadBuffer {
+    internal static var id: Byte = 1
+
+    private let channleID: ChannelID
+    private let data: Data
+
+    internal init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         try channleID = ChannelID(from: buffer)
         try data = Data(from: buffer)
     }
-    
-    func apply(to server: Server) {
+
+    internal func apply(to server: Server) {
         server.receivedData(data, for: channleID)
     }
 }

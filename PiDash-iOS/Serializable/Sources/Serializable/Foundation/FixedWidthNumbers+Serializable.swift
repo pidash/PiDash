@@ -21,11 +21,18 @@ extension Bool: Serializable {
 
 // MARK: - Integer
 extension FixedWidthInteger {
+    /// Creates a new object by deserializing the content of the given buffer.
+    ///
+    /// - Parameter buffer: The buffer to deserialize the data from.
+    /// - Throws: Any deserializing error.
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let bigEndian: Self = try buffer.loadAsType()
         self.init(bigEndian: bigEndian)
     }
 
+    /// Serializes its content to the given buffer.
+    ///
+    /// - Parameter buffer: The buffer to serialize the data to.
     public func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         buffer.saveRawCopy(self.bigEndian)
     }

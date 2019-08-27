@@ -9,12 +9,17 @@ import Foundation
 import Serializable
 
 internal struct OpenChannel: ServerboundMessage {
-    static var id: Byte = 1
-    
-    let channelID: ChannelID
-    let moduleID: String
-    
-    func serializeBody<Buffer>(to buffer: Buffer) where Buffer : ByteWriteBuffer {
+    internal static var id: Byte = 1
+
+    private let channelID: ChannelID
+    private let moduleID: String
+
+    internal init(channelID: ChannelID, moduleID: String) {
+        self.channelID = channelID
+        self.moduleID = moduleID
+    }
+
+    internal func serializeBody<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         channelID.serialize(to: buffer)
         moduleID.serialize(to: buffer)
     }

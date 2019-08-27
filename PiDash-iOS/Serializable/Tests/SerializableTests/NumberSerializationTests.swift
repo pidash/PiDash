@@ -5,12 +5,12 @@
 //  Created by Noah Peeters on 26.08.19.
 //
 
-import Quick
 import Nimble
+import Quick
 @testable import Serializable
 
 public class BoolSerializationTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         describe("serializing") {
             it("serializes false") {
                 expect(false.directSerialized()).to(equal([0]))
@@ -38,7 +38,7 @@ public class BoolSerializationTests: QuickSpec {
 }
 
 public class UInt8SerializationTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         describe("serializing") {
             it("serializes correctly") {
                 expect(UInt8(42).directSerialized()).to(equal([42]))
@@ -58,7 +58,7 @@ public class UInt8SerializationTests: QuickSpec {
 }
 
 public class Int8SerializationTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         describe("serializing") {
             it("serializes positive number correctly") {
                 expect(Int8(42).directSerialized()).to(equal([42]))
@@ -85,7 +85,7 @@ public class Int8SerializationTests: QuickSpec {
 }
 
 public class UInt64SerializationTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         describe("serializing") {
             it("serializes correctly") {
                 expect(UInt64(0x0102030405060708).directSerialized()).to(equal(Array(1...8)))
@@ -109,7 +109,7 @@ public class UInt64SerializationTests: QuickSpec {
 }
 
 public class FloatSerializationTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         let serializedData: ByteArray = [0b01000001, 0b10111000, 0, 0]
         let deserializedFloat: Float = 23
 
@@ -136,7 +136,7 @@ public class FloatSerializationTests: QuickSpec {
 }
 
 public class DoubleSerializationTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         let serializedData: ByteArray = [0b01000000, 0b00110111, 0, 0, 0, 0, 0, 0]
         let deserializedDouble: Double = 23
 
@@ -163,7 +163,7 @@ public class DoubleSerializationTests: QuickSpec {
 }
 
 public class VarInt32SerializationTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         let data: [Int32: ByteArray] = [
             0: [0x00],
             1: [0x01],
@@ -218,7 +218,7 @@ public class VarInt32SerializationTests: QuickSpec {
 }
 
 public class VarInt64SerializationTests: QuickSpec {
-    public override func spec() {
+    override public func spec() {
         let data: [Int64: ByteArray] = [
             0: [0x00],
             1: [0x01],

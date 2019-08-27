@@ -1,0 +1,54 @@
+excluded:
+  - Carthage
+
+enabled_rules:
+  - explicit_init
+  - closure_end_indentationi
+  - closure_spacing
+  - discouraged_optional_boolean
+  - empty_count
+  - empty_string
+  - fallthrough
+  - let_var_whitespace
+  - literal_expression_end_indentation
+  - file_types_order
+  - modifier_order
+  - type_contents_order
+  - sorted_imports
+  - static_operator
+  - toggle_bool
+  - unused_import
+  - yoda_condition
+  - explicit_acl
+  - missing_docs
+
+custom_rules:
+  discouraged_print:
+    name: Discourage print statement
+    regex: '[^\w]print\('
+    message: 'Only use print for debugging purpose'
+    severity: warning
+  use_function_reference:
+    name: Use a function reference instead of a new closure
+    regex: '[( :)\(]\$0\) \}'
+    message: 'Use a closure instead of a function reference'
+    severity: warning
+
+disabled_rules:
+  - nesting
+  - todo
+  - type_contents_order
+  - file_types_order
+  - type_name
+
+type_name:
+  excluded:
+    - ID
+
+identifier_name:
+  excluded:
+    - id
+    - at
+    - to
+
+line_length: 235

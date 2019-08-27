@@ -12,18 +12,12 @@ import Serializable
 internal protocol ServerboundMessage: SerializableDataType {
     static var id: Byte { get }
 
-    func serializeBody<Buffer>(to buffer: Buffer) where Buffer : ByteWriteBuffer
+    func serializeBody<Buffer: ByteWriteBuffer>(to buffer: Buffer)
 }
 
 extension ServerboundMessage {
-    internal func serialize<Buffer>(to buffer: Buffer) where Buffer : ByteWriteBuffer {
+    internal func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         Self.id.serialize(to: buffer)
         serializeBody(to: buffer)
     }
-}
-
-protocol TXMessageBodyless: ServerboundMessage {}
-
-extension TXMessageBodyless {
-    func serializeBody<Buffer>(to buffer: Buffer) where Buffer : ByteWriteBuffer {}
 }

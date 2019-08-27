@@ -9,15 +9,15 @@ import Foundation
 import Serializable
 
 internal struct LoginResponse: ClientboundMessage {
-    static var id: Byte = 0
-    
-    let loginSucceeded: Bool
-    
-    init<Buffer>(from buffer: Buffer) throws where Buffer : ByteReadBuffer {
+    internal static var id: Byte = 0
+
+    private let loginSucceeded: Bool
+
+    internal init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         loginSucceeded = try Bool(from: buffer)
     }
-    
-    func apply(to server: Server) {
+
+    internal func apply(to server: Server) {
         server.handleLoginResponse(loginSucceeded: loginSucceeded)
     }
 }

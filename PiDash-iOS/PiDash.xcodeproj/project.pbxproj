@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		400E344223128CDB00B57407 /* PiDashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E344123128CDB00B57407 /* PiDashTests.swift */; };
 		400E34502312E8E400B57407 /* BlueCom in Frameworks */ = {isa = PBXBuildFile; productRef = 400E344F2312E8E400B57407 /* BlueCom */; };
+		40738F4423151B6A005BE377 /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40738F4323151B6A005BE377 /* DebugPrint.swift */; };
 		40B1E58D2312820300A29211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E58C2312820300A29211 /* AppDelegate.swift */; };
 		40B1E58F2312820300A29211 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E58E2312820300A29211 /* SceneDelegate.swift */; };
 		40B1E5922312820300A29211 /* PiDash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E5902312820300A29211 /* PiDash.xcdatamodeld */; };
@@ -34,6 +35,7 @@
 		400E344323128CDB00B57407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		400E344B2312E77100B57407 /* BlueCom */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCom; sourceTree = "<group>"; };
 		400E34512312FF9600B57407 /* Serializable */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Serializable; sourceTree = "<group>"; };
+		40738F4323151B6A005BE377 /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
 		40B1E5892312820300A29211 /* PiDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B1E58C2312820300A29211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40B1E58E2312820300A29211 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				40B1E59A2312820500A29211 /* LaunchScreen.storyboard */,
 				40B1E59D2312820500A29211 /* Info.plist */,
 				40B1E5902312820300A29211 /* PiDash.xcdatamodeld */,
+				40738F4323151B6A005BE377 /* DebugPrint.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				40B1E5852312820300A29211 /* Sources */,
 				40B1E5862312820300A29211 /* Frameworks */,
 				40B1E5872312820300A29211 /* Resources */,
+				40738F42231515C2005BE377 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -239,6 +243,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40738F42231515C2005BE377 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		400E343B23128CDB00B57407 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -256,6 +281,7 @@
 				40B1E5922312820300A29211 /* PiDash.xcdatamodeld in Sources */,
 				40B1E5942312820300A29211 /* ContentView.swift in Sources */,
 				40B1E58F2312820300A29211 /* SceneDelegate.swift in Sources */,
+				40738F4423151B6A005BE377 /* DebugPrint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

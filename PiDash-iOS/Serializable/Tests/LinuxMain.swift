@@ -2,6 +2,7 @@ import XCTest
 
 import SerializableTests
 
-var tests = [XCTestCaseEntry]()
+internal var tests = [XCTestCaseEntry]()
+
 tests += SerializableTests.allTests()
 XCTMain(tests)

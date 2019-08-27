@@ -1,9 +1,9 @@
-import Quick
 import Nimble
+import Quick
 @testable import Serializable
 
-final public class OptionalSerializationTests: QuickSpec {
-    public override func spec() {
+public final class OptionalSerializationTests: QuickSpec {
+    override public func spec() {
         describe("when serializes an optional UInt8") {
             it("serializes nil correctly") {
                 expect(UInt8?.none.directSerialized()).to(equal([0x00]))
@@ -26,9 +26,9 @@ final public class OptionalSerializationTests: QuickSpec {
     }
 }
 
-final public class StringSerializationTests: QuickSpec {
+public final class StringSerializationTests: QuickSpec {
     // swiftlint:disable:next function_body_length
-    public override func spec() {
+    override public func spec() {
         describe("ascii") {
             let serializedData: ByteArray = [12, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x57, 0x6f, 0x72, 0x6c, 0x64, 0x21]
             let deserializedString = "Hello World!"
