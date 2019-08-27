@@ -12,17 +12,17 @@ import Serializable
 
 public class Server: NSObject {
     // MARK: - UUIDS
-    private static let transferServiceUUID = CBUUID(string: "FD792B42-90F7-4D24-9E8D-096D6EFBC31C")
-    private static let transferServerboundCharacteristicUUID = CBUUID(string: "289698F1-1AB5-4315-915D-F8F0FE5F4EF0")
-    private static let transferClientboundCharacteristicUUID = CBUUID(string: "DCADFB92-3B54-4024-8F0E-8CCE686DD24D")
-    private static let transferCharacteristicUUIDs = [Server.transferServerboundCharacteristicUUID, Server.transferClientboundCharacteristicUUID]
+    internal static let transferServiceUUID = CBUUID(string: "FD792B42-90F7-4D24-9E8D-096D6EFBC31C")
+    internal static let transferServerboundCharacteristicUUID = CBUUID(string: "DCADFB92-3B54-4024-8F0E-8CCE686DD24D")
+    internal static let transferClientboundCharacteristicUUID = CBUUID(string: "289698F1-1AB5-4315-915D-F8F0FE5F4EF0")
+    internal static let transferCharacteristicUUIDs = [Server.transferServerboundCharacteristicUUID, Server.transferClientboundCharacteristicUUID]
     
     // MARK: - Properties
     
     private var channels: [ChannelID: Channel] = [:]
     private var nextChannelID: ChannelID = 0
     private var registeredClientboundMessages: [Byte: ClientboundMessage.Type] = [:]
-    private let peripheral: CBPeripheral
+    internal let peripheral: CBPeripheral
     private var clientboundCharacteristic: CBCharacteristic?
     private var serverboundCharacteristic: CBCharacteristic?
     
@@ -53,10 +53,14 @@ public class Server: NSObject {
     
     // MARK: - Handle incomming data/errors/etc
     
-    private func handleError(_ error: Error) {
+    internal func handleDisconnect(_ error: Error?) {
         isReady.value = false
         
-        channels.values.forEach { $0.clientbound.send(completion: .failure(.bluetoothError(error: error))) }
+        if let error = error {
+            channels.values.forEach { $0.clientbound.send(completion: .failure(.bluetoothError(error: error))) }
+        } else {
+            channels.values.forEach { $0.clientbound.send(completion: .finished) }
+        }
         channels = [:]
     }
     
@@ -143,7 +147,7 @@ public class Server: NSObject {
 extension Server: CBPeripheralDelegate {
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         if let error = error {
-            handleError(error)
+            handleDisconnect(error)
             return
         }
         
@@ -154,7 +158,7 @@ extension Server: CBPeripheralDelegate {
     
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         if let error = error {
-            handleError(error)
+            handleDisconnect(error)
             return
         }
         
@@ -177,7 +181,7 @@ extension Server: CBPeripheralDelegate {
     
     public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         if let error = error {
-            handleError(error)
+            handleDisconnect(error)
             return
         }
         

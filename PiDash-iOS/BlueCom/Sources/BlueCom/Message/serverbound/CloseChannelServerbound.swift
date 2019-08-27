@@ -9,7 +9,7 @@ import Foundation
 import Serializable
 
 internal struct CloseChannelServerbound: ServerboundMessage {
-    static var id: Byte = 2
+    static var id: Byte = 3
     
     let channelID: ChannelID
     

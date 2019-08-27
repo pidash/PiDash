@@ -8,14 +8,23 @@
 
 import UIKit
 import CoreData
+import BlueCom
+import Combine
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let serverManager = ServerManager()
+    
+    var cancel: AnyCancellable?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        cancel = serverManager.connectedServers.sink {
+            print($0)
+        }
+        
         return true
     }
 

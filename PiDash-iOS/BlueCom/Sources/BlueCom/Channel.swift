@@ -8,14 +8,13 @@
 import Foundation
 import Combine
 
-typealias ChannelID = Int
+typealias ChannelID = Int32
 
 public class Channel {
     private let server: Server
     private let channelID: ChannelID
     
     public let clientbound = PassthroughSubject<Data, ChannelCloseError>()
-    
     
     internal init(server: Server, channelID: ChannelID) {
         self.server = server
