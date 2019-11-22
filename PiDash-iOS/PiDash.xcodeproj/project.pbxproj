@@ -10,6 +10,8 @@
 		400E344223128CDB00B57407 /* PiDashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E344123128CDB00B57407 /* PiDashTests.swift */; };
 		400E34502312E8E400B57407 /* BlueCom in Frameworks */ = {isa = PBXBuildFile; productRef = 400E344F2312E8E400B57407 /* BlueCom */; };
 		40738F4423151B6A005BE377 /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40738F4323151B6A005BE377 /* DebugPrint.swift */; };
+		408759DC23154D3000A1E319 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408759DB23154D3000A1E319 /* ConnectionManager.swift */; };
+		408759DE231553DB00A1E319 /* ServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408759DD231553DB00A1E319 /* ServerCell.swift */; };
 		40B1E58D2312820300A29211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E58C2312820300A29211 /* AppDelegate.swift */; };
 		40B1E58F2312820300A29211 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E58E2312820300A29211 /* SceneDelegate.swift */; };
 		40B1E5922312820300A29211 /* PiDash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40B1E5902312820300A29211 /* PiDash.xcdatamodeld */; };
@@ -36,6 +38,8 @@
 		400E344B2312E77100B57407 /* BlueCom */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlueCom; sourceTree = "<group>"; };
 		400E34512312FF9600B57407 /* Serializable */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Serializable; sourceTree = "<group>"; };
 		40738F4323151B6A005BE377 /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
+		408759DB23154D3000A1E319 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		408759DD231553DB00A1E319 /* ServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCell.swift; sourceTree = "<group>"; };
 		40B1E5892312820300A29211 /* PiDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B1E58C2312820300A29211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40B1E58E2312820300A29211 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 			children = (
 				400E344A2312E68B00B57407 /* Application Delegates */,
 				40B1E5932312820300A29211 /* ContentView.swift */,
+				408759DD231553DB00A1E319 /* ServerCell.swift */,
+				408759DB23154D3000A1E319 /* ConnectionManager.swift */,
 				400E34492312E67D00B57407 /* Supporting Files */,
 				40B1E5972312820500A29211 /* Preview Content */,
 			);
@@ -278,9 +284,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				40B1E58D2312820300A29211 /* AppDelegate.swift in Sources */,
+				408759DC23154D3000A1E319 /* ConnectionManager.swift in Sources */,
 				40B1E5922312820300A29211 /* PiDash.xcdatamodeld in Sources */,
 				40B1E5942312820300A29211 /* ContentView.swift in Sources */,
 				40B1E58F2312820300A29211 /* SceneDelegate.swift in Sources */,
+				408759DE231553DB00A1E319 /* ServerCell.swift in Sources */,
 				40738F4423151B6A005BE377 /* DebugPrint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

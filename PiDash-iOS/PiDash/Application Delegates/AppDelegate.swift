@@ -6,7 +6,6 @@
 //  Copyright © 2019 Noah Peeters. All rights reserved.
 //
 
-import BlueCom
 import Combine
 import CoreData
 import UIKit
@@ -14,16 +13,8 @@ import UIKit
 @UIApplicationMain
 internal class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    private let serverManager = ServerManager()
-
-    private var cancel: AnyCancellable?
-
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
-        cancel = serverManager.connectedServers.sink {
-            debugPrint($0)
-        }
 
         return true
     }

@@ -10,7 +10,7 @@ import CoreBluetooth
 import Foundation
 import Serializable
 
-public class Server: NSObject {
+public class Server: NSObject, Identifiable {
     // MARK: - UUIDS
     internal static let transferServiceUUID = CBUUID(string: "FD792B42-90F7-4D24-9E8D-096D6EFBC31C")
     internal static let transferServerboundCharacteristicUUID = CBUUID(string: "DCADFB92-3B54-4024-8F0E-8CCE686DD24D")
@@ -141,6 +141,10 @@ public class Server: NSObject {
     internal func closeChannel(withChannelID channelID: ChannelID) {
         sendMessage(CloseChannelServerbound(channelID: channelID))
         channels.removeValue(forKey: channelID)
+    }
+
+    public var displayName: String? {
+        return peripheral.name
     }
 }
 

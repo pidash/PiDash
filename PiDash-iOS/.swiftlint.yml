@@ -40,6 +40,7 @@ disabled_rules:
   - type_contents_order
   - file_types_order
   - type_name
+  - redundant_optional_initialization
 
 type_name:
   excluded:
